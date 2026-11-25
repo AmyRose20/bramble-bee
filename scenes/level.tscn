@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c1lclia1nryyc"]
+
+[ext_resource type="PackedScene" uid="uid://ckv6j7gnclstc" path="res://scenes/bee.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://btcimcqwoh8q1" path="res://scenes/bee.gd" id="2_w7c3h"]
+[ext_resource type="Texture2D" uid="uid://utixt4u1tofj" path="res://art/btn_left.svg" id="3_ppgk2"]
+[ext_resource type="Texture2D" uid="uid://dq6rkj3l24aar" path="res://art/btn_right.svg" id="4_2r41h"]
+[ext_resource type="Texture2D" uid="uid://ccui8emkea5kd" path="res://art/btn_fly.svg" id="5_klq6b"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yf5fn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_57qmd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d0u6y"]
+
+[node name="Level" type="Node2D" unique_id=624688245]
+
+[node name="Ground" type="ColorRect" parent="." unique_id=952843408]
+offset_top = 1050.0
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(0.43529412, 0.68235296, 0.33333334, 1)
+
+[node name="Bee" parent="." unique_id=1253724346 instance=ExtResource("1_2q6dc")]
+position = Vector2(360, 640)
+script = ExtResource("2_w7c3h")
+
+[node name="Bounds" type="StaticBody2D" parent="." unique_id=2093753729]
+
+[node name="Floor" type="CollisionShape2D" parent="Bounds" unique_id=688025396]
+position = Vector2(0, 1050)
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="Ceiling" type="CollisionShape2D" parent="Bounds" unique_id=1249850011]
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_yf5fn")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Bounds" unique_id=921985965]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_57qmd")
+
+[node name="RightWall" type="CollisionShape2D" parent="Bounds" unique_id=1693651058]
+position = Vector2(720, 0)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_d0u6y")
+
+[node name="Controls" type="CanvasLayer" parent="." unique_id=86345038]
+
+[node name="LeftButton" type="TouchScreenButton" parent="Controls" unique_id=73177692]
+position = Vector2(30, 1100)
+texture_normal = ExtResource("3_ppgk2")
+passby_press = true
+action = "move_left"
+
+[node name="RightButton" type="TouchScreenButton" parent="Controls" unique_id=170462647]
+position = Vector2(180, 1100)
+texture_normal = ExtResource("4_2r41h")
+passby_press = true
+action = "move_right"
+
+[node name="FlyButton" type="TouchScreenButton" parent="Controls" unique_id=892770902]
+position = Vector2(470, 1090)
+texture_normal = ExtResource("5_klq6b")
+action = "fly"
