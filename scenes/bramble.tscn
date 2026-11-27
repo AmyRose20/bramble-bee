@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ccjolkeh6u6pm"]
+
+[ext_resource type="Texture2D" uid="uid://cmwtiuwx6ktsa" path="res://art/bramble.svg" id="1_5dlu3"]
+[ext_resource type="Script" uid="uid://bm6g6xdlnftkb" path="res://scenes/bramble.gd" id="1_em4q4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(180, 24)
+
+[node name="Bramble" type="Area2D" unique_id=793512685]
+script = ExtResource("1_em4q4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1377621478]
+texture = ExtResource("1_5dlu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1880096269]
+shape = SubResource("RectangleShape2D_g4v7s")

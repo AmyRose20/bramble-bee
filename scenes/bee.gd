@@ -12,10 +12,27 @@ const MOVE_SPEED := 250.0
 const MAX_FALL_SPEED := 550.0
 const MAX_RISE_SPEED := 350.0
 
+# True for a short time after being hit, so the bee can't lose two lives at once
+var invincible := false
+
 
 func _ready() -> void:
-	# Label the bee so flowers (and later, hazards) know it's the bee
+	# Label the bee so flowers and hazards know it's the bee
 	add_to_group("bee")
+
+
+func start_invincibility() -> void:
+	invincible = true
+
+	# Flash the bee: fade to see-through and back, 6 times (about 1.5 seconds)
+	var tween := create_tween()
+	tween.set_loops(4)
+	tween.tween_property(self, "modulate:a", 0.3, 0.12)
+	tween.tween_property(self, "modulate:a", 1.0, 0.12)
+
+	# Wait until the flashing has finished, then the bee can be hit again
+	await tween.finished
+	invincible = false
 
 
 func _physics_process(delta: float) -> void:
