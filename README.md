@@ -17,6 +17,9 @@ Bramble Bee is a portfolio project and my first game. The idea was inspired by t
 - One-way leaf platforms: fly up through them, land on top
 - Collectable flowers with a live counter
 - "Level complete" when every flower is collected
+- Bramble hazards that cost a life and send the bee back to the start
+- 3 lives shown as hearts, with a short flashing safe period after each hit
+- Game over with a quick restart
 - Tested on a real Android phone
 
 ## Controls
@@ -33,7 +36,7 @@ Bramble Bee is a portfolio project and my first game. The idea was inspired by t
 - [x] Part 1: Project setup
 - [x] Part 2: The bee flies
 - [x] Part 3: Leaves and flowers
-- [ ] Part 4: Brambles and lives
+- [x] Part 4: Brambles and lives
 - [ ] Part 5: The wasp
 - [ ] Part 6: Screens (title, HUD, pause, level complete, game over)
 - [ ] Part 7: Five levels and saving progress
