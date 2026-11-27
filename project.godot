@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="bramble-bee"
-run/main_scene="uid://c1lclia1nryyc"
+run/main_scene="uid://bnoifxheia1ec"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,10 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
+
+[gui]
+
+theme/custom="res://ui/theme.tres"
 
 [input]
 

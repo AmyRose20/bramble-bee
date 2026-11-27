@@ -11,15 +11,22 @@ var total_flowers := 0
 var lives := STARTING_LIVES
 # Where the bee starts, so we can send it back there when it's hit
 var bee_start_position := Vector2.ZERO
-# True once all lives are lost
+# How long the player has been playing this level (seconds)
+var time_taken := 0.0
+# True once all lives are lost, or once every flower is collected
 var is_game_over := false
+var is_level_complete := false
 
 # Shortcuts to nodes in the level
 @onready var bee: CharacterBody2D = $Bee
 @onready var flower_counter: Label = $HUD/FlowerCounter
-@onready var level_complete_label: Label = $HUD/LevelComplete
 @onready var lives_display: HBoxContainer = $HUD/Lives
-@onready var game_over_label: Label = $HUD/GameOver
+@onready var pause_menu: Control = $HUD/PauseMenu
+@onready var level_complete_menu: Control = $HUD/LevelCompleteMenu
+@onready var stars_row: HBoxContainer = $HUD/LevelCompleteMenu/Panel/Items/Stars
+@onready var stats_label: Label = $HUD/LevelCompleteMenu/Panel/Items/Stats
+@onready var game_over_menu: Control = $HUD/GameOverMenu
+@onready var game_over_stats: Label = $HUD/GameOverMenu/Panel/Items/GameOverStats
 
 
 func _ready() -> void:
@@ -29,9 +36,24 @@ func _ready() -> void:
 	for flower in flowers:
 		flower.collected.connect(_on_flower_collected)
 
-	# Find every hazard (brambles, later the wasp) and listen for "bee_hit"
+	# Find every hazard (brambles, wasps) and listen for "bee_hit"
 	for hazard in get_tree().get_nodes_in_group("hazards"):
 		hazard.bee_hit.connect(_on_bee_hit)
+
+	# Connect the pause button and the pause menu's buttons
+	$HUD/PauseButton.pressed.connect(pause_game)
+	$HUD/PauseMenu/Panel/Items/ResumeButton.pressed.connect(resume_game)
+	$HUD/PauseMenu/Panel/Items/RestartButton.pressed.connect(restart_level)
+	$HUD/PauseMenu/Panel/Items/MenuButton.pressed.connect(go_to_menu)
+
+	# Connect the level complete screen's buttons
+	# (Next level gets connected in Part 7)
+	$HUD/LevelCompleteMenu/Panel/Items/RetryButton.pressed.connect(restart_level)
+	$HUD/LevelCompleteMenu/Panel/Items/MenuButton.pressed.connect(go_to_menu)
+
+	# Connect the game over screen's buttons
+	$HUD/GameOverMenu/Panel/Items/TryAgainButton.pressed.connect(restart_level)
+	$HUD/GameOverMenu/Panel/Items/MenuButton.pressed.connect(go_to_menu)
 
 	# Remember where the bee starts
 	bee_start_position = bee.position
@@ -40,19 +62,19 @@ func _ready() -> void:
 	update_lives()
 
 
-func _process(_delta: float) -> void:
-	# After game over, pressing Fly restarts the level
-	if is_game_over and Input.is_action_just_pressed("fly"):
-		get_tree().reload_current_scene()
+func _process(delta: float) -> void:
+	# Count the time while the level is being played
+	if not is_game_over and not is_level_complete:
+		time_taken += delta
 
 
 func _on_flower_collected() -> void:
 	collected_count += 1
 	update_counter()
 
-	# All flowers collected? Show the message
+	# All flowers collected? Level complete!
 	if collected_count == total_flowers:
-		level_complete_label.visible = true
+		level_complete()
 
 
 func _on_bee_hit() -> void:
@@ -76,13 +98,59 @@ func respawn_bee() -> void:
 	bee.velocity = Vector2.ZERO
 
 
+func level_complete() -> void:
+	is_level_complete = true
+	get_tree().paused = true    # freeze the level behind the screen
+
+	# Stars: one for each life left (3 lives = 3 stars)
+	var stars := stars_row.get_children()
+	for i in stars.size():
+		if i < lives:
+			stars[i].modulate = Color(1, 1, 1, 1)      # earned: full colour
+		else:
+			stars[i].modulate = Color(1, 1, 1, 0.25)   # not earned: faded
+
+	# Stats
+	var minutes := int(time_taken) / 60
+	var seconds := int(time_taken) % 60
+	stats_label.text = "Flowers: %d / %d\nTime: %d:%02d\nLives left: %d" % [
+		collected_count, total_flowers, minutes, seconds, lives
+	]
+
+	level_complete_menu.visible = true
+
+
 func game_over() -> void:
 	is_game_over = true
-	game_over_label.visible = true
-	game_over_label.text = "Game over\nPress Fly to try again"
-	# Freeze the bee where it is
-	bee.set_physics_process(false)
+	get_tree().paused = true    # freeze the level behind the screen
 
+	game_over_stats.text = "Flowers collected: %d / %d" % [collected_count, total_flowers]
+	game_over_menu.visible = true
+
+
+# ---------- Pause menu ----------
+
+func pause_game() -> void:
+	get_tree().paused = true      # freeze the whole game
+	pause_menu.visible = true
+
+
+func resume_game() -> void:
+	get_tree().paused = false
+	pause_menu.visible = false
+
+
+func restart_level() -> void:
+	get_tree().paused = false     # always unpause before leaving, or the next screen starts frozen
+	get_tree().reload_current_scene()
+
+
+func go_to_menu() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/title.tscn")
+
+
+# ---------- Display ----------
 
 func update_counter() -> void:
 	flower_counter.text = "%d / %d" % [collected_count, total_flowers]

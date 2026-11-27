@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bnoifxheia1ec"]
+
+[ext_resource type="Script" uid="uid://dwaukwase2koa" path="res://scenes/title.gd" id="1_4ignj"]
+
+[node name="Title" type="Control" unique_id=538375684]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ignj")
+
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1483094966]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Tagline" type="Label" parent="Layout" unique_id=823173313]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24705882, 0.36862746, 0.17254902, 1)
+theme_override_font_sizes/font_size = 24
+text = "A HEDGEROW ADVENTURE"
+horizontal_alignment = 1
+
+[node name="TitleBramble" type="Label" parent="Layout" unique_id=1154175971]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Bramble"
+horizontal_alignment = 1
+
+[node name="TtileBee" type="Label" parent="Layout" unique_id=1419490017]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 0.5411765, 0, 1)
+theme_override_font_sizes/font_size = 110
+text = "Bee"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Layout" unique_id=717060994]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Layout" unique_id=1299206796]
+custom_minimum_size = Vector2(280, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Play"
