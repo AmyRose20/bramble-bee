@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b7rndcedgrlqn"]
+
+[ext_resource type="Texture2D" uid="uid://dcsvtopn4m8vn" path="res://art/wasp.svg" id="1_5hfoy"]
+[ext_resource type="Script" uid="uid://wpdrgowhl8ur" path="res://scenes/wasp.gd" id="1_jqds0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(56, 28)
+
+[node name="Wasp" type="Area2D" unique_id=129366656]
+script = ExtResource("1_jqds0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=199613758]
+texture = ExtResource("1_5hfoy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1411723085]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_g4v7s")
