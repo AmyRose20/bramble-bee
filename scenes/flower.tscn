@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bej5ap71bppnp"]
+
+[ext_resource type="Texture2D" uid="uid://djhmedr5b25ce" path="res://art/flower.svg" id="1_8x8dx"]
+[ext_resource type="Script" uid="uid://c7aw6wvmaxswr" path="res://scenes/flower.gd" id="1_yoh7s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 22.0
+
+[node name="Flower" type="Area2D" unique_id=501010365]
+script = ExtResource("1_yoh7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1399950103]
+texture = ExtResource("1_8x8dx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2042631351]
+shape = SubResource("CircleShape2D_g4v7s")

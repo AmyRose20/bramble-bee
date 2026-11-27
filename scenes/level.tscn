@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c1lclia1nryyc"]
 
 [ext_resource type="PackedScene" uid="uid://ckv6j7gnclstc" path="res://scenes/bee.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://815v5hdtn01d" path="res://scenes/leaf.tscn" id="1_2r41h"]
+[ext_resource type="Script" uid="uid://bkedb701uxdtr" path="res://scenes/level.gd" id="1_b121j"]
+[ext_resource type="PackedScene" uid="uid://bej5ap71bppnp" path="res://scenes/flower.tscn" id="2_klq6b"]
 [ext_resource type="Script" uid="uid://btcimcqwoh8q1" path="res://scenes/bee.gd" id="2_w7c3h"]
 [ext_resource type="Texture2D" uid="uid://utixt4u1tofj" path="res://art/btn_left.svg" id="3_ppgk2"]
 [ext_resource type="Texture2D" uid="uid://dq6rkj3l24aar" path="res://art/btn_right.svg" id="4_2r41h"]
@@ -15,6 +18,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d0u6y"]
 
 [node name="Level" type="Node2D" unique_id=624688245]
+script = ExtResource("1_b121j")
 
 [node name="Ground" type="ColorRect" parent="." unique_id=952843408]
 offset_top = 1050.0
@@ -22,8 +26,38 @@ offset_right = 720.0
 offset_bottom = 1280.0
 color = Color(0.43529412, 0.68235296, 0.33333334, 1)
 
+[node name="Leaf" parent="." unique_id=1290156412 instance=ExtResource("1_2r41h")]
+position = Vector2(180, 180)
+
+[node name="Leaf2" parent="." unique_id=280487698 instance=ExtResource("1_2r41h")]
+position = Vector2(520, 720)
+
+[node name="Leaf3" parent="." unique_id=1723506056 instance=ExtResource("1_2r41h")]
+position = Vector2(220, 540)
+
+[node name="Leaf4" parent="." unique_id=1956393412 instance=ExtResource("1_2r41h")]
+position = Vector2(500, 380)
+
+[node name="Leaf5" parent="." unique_id=1599942222 instance=ExtResource("1_2r41h")]
+position = Vector2(260, 230)
+
+[node name="Flower" parent="." unique_id=501010365 instance=ExtResource("2_klq6b")]
+position = Vector2(180, 840)
+
+[node name="Flower2" parent="." unique_id=766139303 instance=ExtResource("2_klq6b")]
+position = Vector2(520, 680)
+
+[node name="Flower3" parent="." unique_id=1007873951 instance=ExtResource("2_klq6b")]
+position = Vector2(220, 500)
+
+[node name="Flower4" parent="." unique_id=586142534 instance=ExtResource("2_klq6b")]
+position = Vector2(500, 340)
+
+[node name="Flower5" parent="." unique_id=2023089856 instance=ExtResource("2_klq6b")]
+position = Vector2(260, 190)
+
 [node name="Bee" parent="." unique_id=1253724346 instance=ExtResource("1_2q6dc")]
-position = Vector2(360, 640)
+position = Vector2(360, 1000)
 script = ExtResource("2_w7c3h")
 
 [node name="Bounds" type="StaticBody2D" parent="." unique_id=2093753729]
@@ -63,3 +97,24 @@ action = "move_right"
 position = Vector2(470, 1090)
 texture_normal = ExtResource("5_klq6b")
 action = "fly"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=730267735]
+
+[node name="FlowerCounter" type="Label" parent="HUD" unique_id=745808933]
+offset_left = 24.0
+offset_top = 40.0
+offset_right = 64.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.16862746, 0.12941177, 0.09411765, 1)
+theme_override_font_sizes/font_size = 40
+text = "0/5"
+
+[node name="LevelComplete" type="Label" parent="HUD" unique_id=1464980640]
+visible = false
+offset_top = 560.0
+offset_right = 720.0
+offset_bottom = 640.0
+theme_override_colors/font_color = Color(0.16862746, 0.12941177, 0.09411765, 1)
+theme_override_font_sizes/font_size = 56
+text = "Level Complete!"
+horizontal_alignment = 1
