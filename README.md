@@ -21,6 +21,9 @@ Bramble Bee is a portfolio project and my first game. The idea was inspired by t
 - 3 lives shown as hearts, with a short flashing safe period after each hit
 - Game over with a quick restart
 - Patrolling wasp enemy with adjustable speed and patrol distance (introduced from Level 3)
+- Title screen, pause menu, level complete and game over screens
+- Star rating (1–3 stars based on lives left) with time and flower stats
+- Shared UI theme so every button and panel matches
 - Tested on a real Android phone
 
 ## Controls
@@ -39,7 +42,7 @@ Bramble Bee is a portfolio project and my first game. The idea was inspired by t
 - [x] Part 3: Leaves and flowers
 - [x] Part 4: Brambles and lives
 - [x] Part 5: The wasp
-- [ ] Part 6: Screens (title, HUD, pause, level complete, game over)
+- [x] Part 6: Screens (title, HUD, pause, level complete, game over)
 - [ ] Part 7: Five levels and saving progress
 - [ ] Part 8: Art and sound
 - [ ] Part 9: Upload for closed testing
