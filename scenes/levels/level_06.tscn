@@ -23,7 +23,7 @@
 
 [node name="Level" type="Node2D" unique_id=624688245]
 script = ExtResource("1_6vksy")
-level_number = 7
+level_number = 6
 level_height = 3840
 
 [node name="Ground" type="ColorRect" parent="." unique_id=952843408]
