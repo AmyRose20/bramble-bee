@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bc8fqukwatdso"]
+
+[ext_resource type="Script" uid="uid://cptalujrlh4i2" path="res://scenes/level_select.gd" id="1_3shnc"]
+
+[node name="LevelSelect" type="Control" unique_id=901730208]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3shnc")
+
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1819067190]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Title" type="Label" parent="Layout" unique_id=1073281807]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Levels"
+horizontal_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="Layout" unique_id=796939333]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+columns = 3
+
+[node name="BackButton" type="Button" parent="Layout" unique_id=158281282]
+custom_minimum_size = Vector2(280, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"

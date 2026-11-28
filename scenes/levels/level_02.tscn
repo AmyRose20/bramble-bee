@@ -1,0 +1,394 @@
+[gd_scene format=3 uid="uid://bdq5gm2x2wx10"]
+
+[ext_resource type="Script" uid="uid://bkedb701uxdtr" path="res://scenes/level.gd" id="1_o4ql5"]
+[ext_resource type="PackedScene" uid="uid://815v5hdtn01d" path="res://scenes/leaf.tscn" id="2_4hx2o"]
+[ext_resource type="PackedScene" uid="uid://bej5ap71bppnp" path="res://scenes/flower.tscn" id="3_km0xc"]
+[ext_resource type="PackedScene" uid="uid://ccjolkeh6u6pm" path="res://scenes/bramble.tscn" id="4_n536o"]
+[ext_resource type="PackedScene" uid="uid://ckv6j7gnclstc" path="res://scenes/bee.tscn" id="5_m2jhg"]
+[ext_resource type="Script" uid="uid://btcimcqwoh8q1" path="res://scenes/bee.gd" id="6_q6ljp"]
+[ext_resource type="Texture2D" uid="uid://utixt4u1tofj" path="res://art/btn_left.svg" id="7_4dr30"]
+[ext_resource type="Texture2D" uid="uid://dq6rkj3l24aar" path="res://art/btn_right.svg" id="8_dscar"]
+[ext_resource type="Texture2D" uid="uid://ccui8emkea5kd" path="res://art/btn_fly.svg" id="9_01hg1"]
+[ext_resource type="Texture2D" uid="uid://dwtyut2iwmupf" path="res://art/heart.svg" id="10_v5pqk"]
+[ext_resource type="Texture2D" uid="uid://bssogw4h4ghkp" path="res://art/star.svg" id="11_m2te4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yf5fn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_57qmd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d0u6y"]
+
+[node name="Level" type="Node2D" unique_id=624688245]
+script = ExtResource("1_o4ql5")
+level_number = 2
+level_height = 2560
+
+[node name="Ground" type="ColorRect" parent="." unique_id=952843408]
+offset_top = 1050.0
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(0.43529412, 0.68235296, 0.33333334, 1)
+
+[node name="Leaf" parent="." unique_id=1290156412 instance=ExtResource("2_4hx2o")]
+position = Vector2(540, 880)
+
+[node name="Leaf2" parent="." unique_id=280487698 instance=ExtResource("2_4hx2o")]
+position = Vector2(200, 720)
+
+[node name="Leaf3" parent="." unique_id=1723506056 instance=ExtResource("2_4hx2o")]
+position = Vector2(500, 540)
+
+[node name="Leaf4" parent="." unique_id=1956393412 instance=ExtResource("2_4hx2o")]
+position = Vector2(220, 380)
+
+[node name="Leaf5" parent="." unique_id=1599942222 instance=ExtResource("2_4hx2o")]
+position = Vector2(460, 230)
+
+[node name="Leaf6" parent="." unique_id=1779438726 instance=ExtResource("2_4hx2o")]
+position = Vector2(240, 80)
+
+[node name="Leaf7" parent="." unique_id=188157156 instance=ExtResource("2_4hx2o")]
+position = Vector2(500, -80)
+
+[node name="Leaf8" parent="." unique_id=1154032810 instance=ExtResource("2_4hx2o")]
+position = Vector2(220, -260)
+
+[node name="Leaf9" parent="." unique_id=1973519339 instance=ExtResource("2_4hx2o")]
+position = Vector2(480, -460)
+
+[node name="Leaf10" parent="." unique_id=1273569089 instance=ExtResource("2_4hx2o")]
+position = Vector2(240, -680)
+
+[node name="Leaf11" parent="." unique_id=38250400 instance=ExtResource("2_4hx2o")]
+position = Vector2(460, -900)
+
+[node name="Leaf12" parent="." unique_id=1689328895 instance=ExtResource("2_4hx2o")]
+position = Vector2(240, -1100)
+
+[node name="Flower" parent="." unique_id=501010365 instance=ExtResource("3_km0xc")]
+position = Vector2(540, 840)
+
+[node name="Flower2" parent="." unique_id=766139303 instance=ExtResource("3_km0xc")]
+position = Vector2(500, 500)
+
+[node name="Flower3" parent="." unique_id=1007873951 instance=ExtResource("3_km0xc")]
+position = Vector2(460, 190)
+
+[node name="Flower4" parent="." unique_id=586142534 instance=ExtResource("3_km0xc")]
+position = Vector2(240, 40)
+
+[node name="Flower5" parent="." unique_id=2023089856 instance=ExtResource("3_km0xc")]
+position = Vector2(220, -300)
+
+[node name="Flower6" parent="." unique_id=1666460456 instance=ExtResource("3_km0xc")]
+position = Vector2(480, -500)
+
+[node name="Flower7" parent="." unique_id=498775283 instance=ExtResource("3_km0xc")]
+position = Vector2(460, -940)
+
+[node name="Flower8" parent="." unique_id=1232338847 instance=ExtResource("3_km0xc")]
+position = Vector2(240, -1140)
+
+[node name="Bramble" parent="." unique_id=793512685 instance=ExtResource("4_n536o")]
+position = Vector2(380, 660)
+
+[node name="Bramble2" parent="." unique_id=521186132 instance=ExtResource("4_n536o")]
+position = Vector2(360, -170)
+
+[node name="Bramble3" parent="." unique_id=676764520 instance=ExtResource("4_n536o")]
+position = Vector2(560, -600)
+
+[node name="Bee" parent="." unique_id=1253724346 instance=ExtResource("5_m2jhg")]
+position = Vector2(360, 1000)
+script = ExtResource("6_q6ljp")
+
+[node name="Bounds" type="StaticBody2D" parent="." unique_id=2093753729]
+
+[node name="Floor" type="CollisionShape2D" parent="Bounds" unique_id=688025396]
+position = Vector2(0, 1050)
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="Ceiling" type="CollisionShape2D" parent="Bounds" unique_id=1249850011]
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_yf5fn")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Bounds" unique_id=921985965]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_57qmd")
+
+[node name="RightWall" type="CollisionShape2D" parent="Bounds" unique_id=1693651058]
+position = Vector2(720, 0)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_d0u6y")
+
+[node name="Controls" type="CanvasLayer" parent="." unique_id=86345038]
+
+[node name="LeftButton" type="TouchScreenButton" parent="Controls" unique_id=73177692]
+position = Vector2(30, 1100)
+texture_normal = ExtResource("7_4dr30")
+passby_press = true
+action = "move_left"
+
+[node name="RightButton" type="TouchScreenButton" parent="Controls" unique_id=170462647]
+position = Vector2(180, 1100)
+texture_normal = ExtResource("8_dscar")
+passby_press = true
+action = "move_right"
+
+[node name="FlyButton" type="TouchScreenButton" parent="Controls" unique_id=892770902]
+position = Vector2(470, 1090)
+texture_normal = ExtResource("9_01hg1")
+action = "fly"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=730267735]
+
+[node name="FlowerCounter" type="Label" parent="HUD" unique_id=745808933]
+offset_left = 470.0
+offset_top = 40.0
+offset_right = 600.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.16862746, 0.12941177, 0.09411765, 1)
+theme_override_font_sizes/font_size = 40
+text = "0/5"
+horizontal_alignment = 2
+
+[node name="Lives" type="HBoxContainer" parent="HUD" unique_id=1386032797]
+offset_left = 24.0
+offset_top = 36.0
+offset_right = 184.0
+offset_bottom = 80.0
+theme_override_constants/separation = 8
+
+[node name="Heart1" type="TextureRect" parent="HUD/Lives" unique_id=677292175]
+layout_mode = 2
+texture = ExtResource("10_v5pqk")
+
+[node name="Heart2" type="TextureRect" parent="HUD/Lives" unique_id=1969400547]
+layout_mode = 2
+texture = ExtResource("10_v5pqk")
+
+[node name="Heart3" type="TextureRect" parent="HUD/Lives" unique_id=1756062204]
+layout_mode = 2
+texture = ExtResource("10_v5pqk")
+
+[node name="LevelName" type="Label" parent="HUD" unique_id=661581398]
+offset_top = 40.0
+offset_right = 720.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 36
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="PauseButton" type="Button" parent="HUD" unique_id=887873667]
+custom_minimum_size = Vector2(76, 64)
+offset_left = 620.0
+offset_top = 28.0
+offset_right = 690.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 28
+text = "II"
+
+[node name="PauseMenu" type="Control" parent="HUD" unique_id=1307125290]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="HUD/PauseMenu" unique_id=766172994]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Panel" type="PanelContainer" parent="HUD/PauseMenu" unique_id=1694296731]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Items" type="VBoxContainer" parent="HUD/PauseMenu/Panel" unique_id=1960335535]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PausedTitle" type="Label" parent="HUD/PauseMenu/Panel/Items" unique_id=415165220]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="HUD/PauseMenu/Panel/Items" unique_id=1854544071]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="HUD/PauseMenu/Panel/Items" unique_id=809081518]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Restart"
+
+[node name="MenuButton" type="Button" parent="HUD/PauseMenu/Panel/Items" unique_id=639377676]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Menu"
+
+[node name="GameOverMenu" type="Control" parent="HUD" unique_id=1549025009]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="HUD/GameOverMenu" unique_id=1116988553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Panel" type="PanelContainer" parent="HUD/GameOverMenu" unique_id=1671352104]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Items" type="VBoxContainer" parent="HUD/GameOverMenu/Panel" unique_id=1799524806]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GameOverTitle" type="Label" parent="HUD/GameOverMenu/Panel/Items" unique_id=377555860]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="GameOverStats" type="Label" parent="HUD/GameOverMenu/Panel/Items" unique_id=798210274]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Stats"
+horizontal_alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="HUD/GameOverMenu/Panel/Items" unique_id=634227838]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Try again
+"
+
+[node name="MenuButton" type="Button" parent="HUD/GameOverMenu/Panel/Items" unique_id=9364902]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Menu"
+
+[node name="LevelCompleteMenu" type="Control" parent="HUD" unique_id=1948136993]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="HUD/LevelCompleteMenu" unique_id=1476066254]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Panel" type="PanelContainer" parent="HUD/LevelCompleteMenu" unique_id=1502854700]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Items" type="VBoxContainer" parent="HUD/LevelCompleteMenu/Panel" unique_id=1802586836]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="CompleteTitle" type="Label" parent="HUD/LevelCompleteMenu/Panel/Items" unique_id=1626031860]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Level Complete!"
+horizontal_alignment = 1
+
+[node name="Stars" type="HBoxContainer" parent="HUD/LevelCompleteMenu/Panel/Items" unique_id=513454732]
+layout_mode = 2
+alignment = 1
+
+[node name="Star1" type="TextureRect" parent="HUD/LevelCompleteMenu/Panel/Items/Stars" unique_id=677433469]
+layout_mode = 2
+texture = ExtResource("11_m2te4")
+
+[node name="Star2" type="TextureRect" parent="HUD/LevelCompleteMenu/Panel/Items/Stars" unique_id=26652757]
+layout_mode = 2
+texture = ExtResource("11_m2te4")
+
+[node name="Star3" type="TextureRect" parent="HUD/LevelCompleteMenu/Panel/Items/Stars" unique_id=1730461241]
+layout_mode = 2
+texture = ExtResource("11_m2te4")
+
+[node name="Stats" type="Label" parent="HUD/LevelCompleteMenu/Panel/Items" unique_id=1859000263]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Stats"
+horizontal_alignment = 1
+
+[node name="NextButton" type="Button" parent="HUD/LevelCompleteMenu/Panel/Items" unique_id=264645846]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+disabled = true
+text = "Next level"
+
+[node name="RetryButton" type="Button" parent="HUD/LevelCompleteMenu/Panel/Items" unique_id=691268609]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Retry
+"
+
+[node name="MenuButton" type="Button" parent="HUD/LevelCompleteMenu/Panel/Items" unique_id=1779452386]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Menu"
