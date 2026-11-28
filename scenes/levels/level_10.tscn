@@ -23,8 +23,8 @@
 
 [node name="Level" type="Node2D" unique_id=624688245]
 script = ExtResource("1_p7cwj")
-level_number = 7
-level_height = 3840
+level_number = 10
+level_height = 5120
 
 [node name="Ground" type="ColorRect" parent="." unique_id=952843408]
 offset_top = 1050.0
@@ -36,130 +36,214 @@ color = Color(0.43529412, 0.68235296, 0.33333334, 1)
 position = Vector2(360, 920)
 
 [node name="Leaf2" parent="." unique_id=280487698 instance=ExtResource("2_5db3f")]
-position = Vector2(140, 740)
+position = Vector2(200, 740)
 
 [node name="Leaf3" parent="." unique_id=1723506056 instance=ExtResource("2_5db3f")]
-position = Vector2(580, 560)
+position = Vector2(520, 560)
 
 [node name="Leaf4" parent="." unique_id=1956393412 instance=ExtResource("2_5db3f")]
-position = Vector2(140, 380)
+position = Vector2(200, 380)
 
 [node name="Leaf5" parent="." unique_id=1599942222 instance=ExtResource("2_5db3f")]
-position = Vector2(580, 200)
+position = Vector2(520, 200)
 
 [node name="Leaf6" parent="." unique_id=1779438726 instance=ExtResource("2_5db3f")]
 position = Vector2(360, 20)
 
 [node name="Leaf7" parent="." unique_id=188157156 instance=ExtResource("2_5db3f")]
-position = Vector2(140, -160)
+position = Vector2(560, -160)
 
 [node name="Leaf8" parent="." unique_id=1154032810 instance=ExtResource("2_5db3f")]
-position = Vector2(580, -340)
+position = Vector2(560, -160)
 
 [node name="Leaf9" parent="." unique_id=1973519339 instance=ExtResource("2_5db3f")]
-position = Vector2(360, -520)
+position = Vector2(180, -580)
 
 [node name="Leaf10" parent="." unique_id=1273569089 instance=ExtResource("2_5db3f")]
-position = Vector2(140, -720)
+position = Vector2(180, -800)
 
 [node name="Leaf11" parent="." unique_id=38250400 instance=ExtResource("2_5db3f")]
-position = Vector2(580, -920)
+position = Vector2(360, -1000)
 
 [node name="Leaf12" parent="." unique_id=1689328895 instance=ExtResource("2_5db3f")]
-position = Vector2(140, -1120)
+position = Vector2(520, -1200)
 
 [node name="Leaf13" parent="." unique_id=1746272817 instance=ExtResource("2_5db3f")]
-position = Vector2(360, -1340)
+position = Vector2(200, -1500)
 
 [node name="Leaf14" parent="." unique_id=2098800274 instance=ExtResource("2_5db3f")]
-position = Vector2(580, -1580)
+position = Vector2(520, -1700)
 
 [node name="Leaf15" parent="." unique_id=1441819227 instance=ExtResource("2_5db3f")]
-position = Vector2(140, -1840)
+position = Vector2(360, -2000)
 
 [node name="Leaf16" parent="." unique_id=640422656 instance=ExtResource("2_5db3f")]
-position = Vector2(360, -2120)
+position = Vector2(200, -2200)
+
+[node name="Leaf17" parent="." unique_id=1112728914 instance=ExtResource("2_5db3f")]
+position = Vector2(520, -2400)
+
+[node name="Leaf18" parent="." unique_id=1063319445 instance=ExtResource("2_5db3f")]
+position = Vector2(200, -2600)
+
+[node name="Leaf19" parent="." unique_id=262929114 instance=ExtResource("2_5db3f")]
+position = Vector2(520, -3000)
+
+[node name="Leaf20" parent="." unique_id=1679050813 instance=ExtResource("2_5db3f")]
+position = Vector2(200, -3200)
+
+[node name="Leaf21" parent="." unique_id=837172160 instance=ExtResource("2_5db3f")]
+position = Vector2(520, -3400)
+
+[node name="Leaf22" parent="." unique_id=147408553 instance=ExtResource("2_5db3f")]
+position = Vector2(360, -3720)
 
 [node name="Flower" parent="." unique_id=501010365 instance=ExtResource("3_r3n8r")]
 position = Vector2(360, 880)
 
 [node name="Flower2" parent="." unique_id=766139303 instance=ExtResource("3_r3n8r")]
-position = Vector2(580, 520)
+position = Vector2(560, 520)
 
 [node name="Flower3" parent="." unique_id=1007873951 instance=ExtResource("3_r3n8r")]
-position = Vector2(140, 340)
+position = Vector2(200, 340)
 
 [node name="Flower4" parent="." unique_id=586142534 instance=ExtResource("3_r3n8r")]
-position = Vector2(360, 120)
+position = Vector2(520, 160)
 
 [node name="Flower5" parent="." unique_id=2023089856 instance=ExtResource("3_r3n8r")]
-position = Vector2(140, -200)
+position = Vector2(560, -200)
 
 [node name="Flower6" parent="." unique_id=1666460456 instance=ExtResource("3_r3n8r")]
-position = Vector2(580, -380)
+position = Vector2(560, -420)
 
 [node name="Flower7" parent="." unique_id=498775283 instance=ExtResource("3_r3n8r")]
-position = Vector2(360, -610)
+position = Vector2(180, -840)
 
 [node name="Flower8" parent="." unique_id=1232338847 instance=ExtResource("3_r3n8r")]
-position = Vector2(580, -960)
+position = Vector2(360, -1100)
 
 [node name="Flower9" parent="." unique_id=1779882258 instance=ExtResource("3_r3n8r")]
-position = Vector2(360, -1380)
+position = Vector2(360, -1420)
 
 [node name="Flower10" parent="." unique_id=1191242912 instance=ExtResource("3_r3n8r")]
-position = Vector2(140, -1880)
+position = Vector2(520, -1740)
 
 [node name="Flower11" parent="." unique_id=549039802 instance=ExtResource("3_r3n8r")]
-position = Vector2(360, -2160)
+position = Vector2(360, -1920)
+
+[node name="Flower12" parent="." unique_id=1396422524 instance=ExtResource("3_r3n8r")]
+position = Vector2(200, -2240)
+
+[node name="Flower13" parent="." unique_id=1493129396 instance=ExtResource("3_r3n8r")]
+position = Vector2(520, -2440)
+
+[node name="Flower14" parent="." unique_id=512907587 instance=ExtResource("3_r3n8r")]
+position = Vector2(560, -3040)
+
+[node name="Flower15" parent="." unique_id=691786512 instance=ExtResource("3_r3n8r")]
+position = Vector2(200, -3240)
+
+[node name="Flower16" parent="." unique_id=66785516 instance=ExtResource("3_r3n8r")]
+position = Vector2(360, -3760)
 
 [node name="Bramble" parent="." unique_id=793512685 instance=ExtResource("4_ko8rk")]
-position = Vector2(580, 820)
+position = Vector2(100, -1340)
 
 [node name="Bramble2" parent="." unique_id=521186132 instance=ExtResource("4_ko8rk")]
-position = Vector2(140, 560)
+position = Vector2(620, -1340)
 
 [node name="Bramble3" parent="." unique_id=676764520 instance=ExtResource("4_ko8rk")]
-position = Vector2(580, 380)
+position = Vector2(100, -1840)
 
 [node name="Bramble4" parent="." unique_id=352227907 instance=ExtResource("4_ko8rk")]
-position = Vector2(140, 200)
+position = Vector2(620, -1840)
 
 [node name="Bramble5" parent="." unique_id=2108854599 instance=ExtResource("4_ko8rk")]
-position = Vector2(610, 30)
+position = Vector2(100, -2760)
 
 [node name="Bramble6" parent="." unique_id=2137794689 instance=ExtResource("4_ko8rk")]
-position = Vector2(380, -140)
+position = Vector2(360, -2760)
 
 [node name="Bramble7" parent="." unique_id=761305427 instance=ExtResource("4_ko8rk")]
-position = Vector2(120, -530)
+position = Vector2(620, -2760)
 
 [node name="Bramble8" parent="." unique_id=1690463375 instance=ExtResource("4_ko8rk")]
-position = Vector2(580, -1060)
-rotation = -12.566371
+position = Vector2(100, -3540)
 
 [node name="Bramble9" parent="." unique_id=884310023 instance=ExtResource("4_ko8rk")]
-position = Vector2(360, 470)
+position = Vector2(360, -3540)
 rotation = 1.5707964
 
 [node name="Bramble10" parent="." unique_id=928317905 instance=ExtResource("4_ko8rk")]
-position = Vector2(360, -1230)
+position = Vector2(620, -3540)
 rotation = 1.5707964
 
+[node name="Bramble11" parent="." unique_id=2050464049 instance=ExtResource("4_ko8rk")]
+position = Vector2(425, -270)
+rotation = 1.5707964
+
+[node name="Bramble12" parent="." unique_id=888733938 instance=ExtResource("4_ko8rk")]
+position = Vector2(300, -690)
+rotation = 1.5707964
+
+[node name="Bramble13" parent="." unique_id=244160950 instance=ExtResource("4_ko8rk")]
+position = Vector2(425, 495)
+rotation = 1.5707964
+
+[node name="Bramble14" parent="." unique_id=813998704 instance=ExtResource("4_ko8rk")]
+position = Vector2(295, -2265)
+rotation = 1.5707964
+
+[node name="Bramble15" parent="." unique_id=47105067 instance=ExtResource("4_ko8rk")]
+position = Vector2(425, -3065)
+rotation = 1.5707964
+
+[node name="Bramble16" parent="." unique_id=1735569478 instance=ExtResource("4_ko8rk")]
+position = Vector2(200, 560)
+
+[node name="Bramble17" parent="." unique_id=1099473508 instance=ExtResource("4_ko8rk")]
+position = Vector2(600, 40)
+
+[node name="Bramble18" parent="." unique_id=1142918242 instance=ExtResource("4_ko8rk")]
+position = Vector2(200, -2400)
+
+[node name="Bramble19" parent="." unique_id=45669633 instance=ExtResource("4_ko8rk")]
+position = Vector2(520, -3200)
+
 [node name="Wasp" parent="." unique_id=129366656 instance=ExtResource("5_gttrq")]
-position = Vector2(140, -650)
-patrol_distance = 380.0
-speed = 150.0
+position = Vector2(230, -1340)
+patrol_distance = 260.0
+speed = 160.0
 
 [node name="Wasp2" parent="." unique_id=544835610 instance=ExtResource("5_gttrq")]
-position = Vector2(200, -1710)
-patrol_distance = 300.0
-speed = 150.0
+position = Vector2(230, -1840)
+patrol_distance = 260.0
+speed = 170.0
 
 [node name="Wasp3" parent="." unique_id=794204368 instance=ExtResource("5_gttrq")]
-position = Vector2(150, -1990)
+position = Vector2(120, -2880)
+patrol_distance = 420.0
+speed = 180.0
+
+[node name="Wasp4" parent="." unique_id=1871676923 instance=ExtResource("5_gttrq")]
+position = Vector2(120, -3660)
+patrol_distance = 420.0
+speed = 195.0
+
+[node name="Wasp5" parent="." unique_id=1145992210 instance=ExtResource("5_gttrq")]
+position = Vector2(150, -500)
+patrol_distance = 300.0
+speed = 170.0
+
+[node name="Wasp6" parent="." unique_id=2092700395 instance=ExtResource("5_gttrq")]
+position = Vector2(120, -2055)
 patrol_distance = 400.0
-speed = 160.0
+speed = 180.0
+
+[node name="Wasp7" parent="." unique_id=1853146684 instance=ExtResource("5_gttrq")]
+position = Vector2(120, -3320)
+patrol_distance = 420.0
+speed = 185.0
 
 [node name="Bee" parent="." unique_id=1253724346 instance=ExtResource("6_n3gcc")]
 position = Vector2(360, 1000)
